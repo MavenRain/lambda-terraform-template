@@ -3,12 +3,12 @@
 exports.handler = function (event, context, callback) {
     require('child_process').execFile('ls', function(err, data) {
       function responseBody() {
-        if (err) return "<p>" + err + "</p>";
-        else return "<p>" + data.toString() + "</p>";
+        if (err) return err;
+        else return data.toString();
       }
       var response = {
         statusCode: 200, 
-        body: responseBody()
+        body: "<p>" + responseBody() + "</p>"
       };
       callback(null, response);
     });
