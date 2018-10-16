@@ -1,7 +1,7 @@
 'use strict';
 
 exports.handler = function (event, context, callback) {
-    require('child_process').exec('cp hi.sh /tmp; cd /tmp; chmod +x hi.sh; /tmp/hi.sh', function(err, data) {
+    require('child_process').exec('cp hello /tmp; cd /tmp; chmod +x hello; /tmp/hello', function(err, data) {
       function responseBody() {
         if (err) return err;
         else return data.toString();

@@ -8,7 +8,6 @@ provider "aws" {
 
 data "archive_file" "lambda-con" {
   type = "zip"
-  //source_file = "index.js"
   source_dir = "./source"
   output_path = "${local.lambda-file}"
 }
